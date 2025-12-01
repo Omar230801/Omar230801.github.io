@@ -1,0 +1,34 @@
+.intro-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF; /* sfondo scuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.logo {
+  width: 200px; /* dimensione del logo, puoi cambiare */
+  opacity: 0;
+  transform: scale(0.5);
+  animation: fadeInScale 2s forwards;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

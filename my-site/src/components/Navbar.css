@@ -1,0 +1,22 @@
+nav {
+  padding: 1rem 0;
+  background-color: #222;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #00bfff;
+}

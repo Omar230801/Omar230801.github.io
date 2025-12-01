@@ -1,6 +1,7 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import projectsData from "../projects.json"; // import diretto
+import './Projects.css';
 
 function Projects() {
   return (
