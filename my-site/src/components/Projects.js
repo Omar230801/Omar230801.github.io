@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
-import projectsData from "../projects.json"; // creeremo questo file dopo
+import projectsData from "../projects.json"; 
 
 function Projects() {
   const [projects, setProjects] = useState([]);

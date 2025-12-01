@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Portfolio React",
+    "description": "Sito personale con React e GitHub Pages",
+    "link": "https://github.com/Omar230801/my-portfolio",
+    "image": "assets/img/portfolio.png"
+  },
+  {
+    "title": "Progetto Python",
+    "description": "Sistema di raccomandazione con Python",
+    "link": "https://github.com/Omar230801/recommender",
+    "image": "assets/img/python.png"
+  }
+]
