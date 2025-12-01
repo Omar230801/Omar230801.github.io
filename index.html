@@ -1,10 +1,103 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Ndoye Omar</title>
-  </head>
-  <body>
-    <h1>Benvenuto nel mio sito personale!</h1>
-  </body>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Il Mio Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #222;
+    }
+    header {
+      padding: 2rem;
+      background: #222;
+      color: white;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .section {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 1.2rem;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #222;
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Il mio Portfolio</h1>
+    <nav>
+      <a href="#about">Chi Sono</a>
+      <a href="#projects">Progetti</a>
+      <a href="#cv">CV</a>
+    </nav>
+  </header>
+
+  <section id="about" class="section">
+    <h2>Chi Sono</h2>
+    <div class="card">
+      <p>Scrivi qui una tua descrizione personale. Chi sei, cosa studi o cosa fai, cosa ti appassiona.</p>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>I Miei Progetti</h2>
+    <div id="projects-container" class="projects-grid"></div>
+  </section>
+
+  <section id="cv" class="section">
+    <h2>Curriculum Vitae</h2>
+    <div class="card">
+      <p>Puoi inserire il link per scaricare il tuo CV:</p>
+      <a href="cv.pdf" download>Scarica il mio CV</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 - Il mio Portfolio
+  </footer>
+
+  <script>
+    fetch("projects.json")
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("projects-container");
+        data.forEach(p => {
+          container.innerHTML += `
+            <div class="card">
+              <h3>${p.title}</h3>
+              <p>${p.description}</p>
+              <a href="${p.link}" target="_blank">Apri progetto</a>
+            </div>
+          `;
+        });
+      });
+  </script>
+</body>
 </html>
